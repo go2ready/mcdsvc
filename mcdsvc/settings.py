@@ -28,7 +28,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6LenmpwUAAAAAO9zw7A56LXeysvy7t0y6OsBwqBG'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mcd.jojotech.co.uk', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['mcd.jojotech.co.uk', 'localhost', '127.0.0.1', '104.40.203.255']
 
 # Application definition
 
@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'mcdsvc.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-EXAMPLE_DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'djangostack',
@@ -97,7 +97,7 @@ EXAMPLE_DATABASES = {
     }
 }
 
-DATABASES = {
+EXAMPLE_DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
