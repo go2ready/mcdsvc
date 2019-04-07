@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as request from "superagent";
 
 import { Theme } from '@material-ui/core/styles/createMuiTheme';
 import { withStyles, WithStyles, createStyles  } from '@material-ui/core/styles';
@@ -11,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Fade from '@material-ui/core/Fade';
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
+import IconButton from '@material-ui/core/IconButton';
 
 const styles = (theme: Theme) => createStyles({
   root: {
@@ -21,7 +22,7 @@ const styles = (theme: Theme) => createStyles({
     paddingTop: theme.spacing.unit,
     paddingBottom: theme.spacing.unit,
   },
-  button: { /* ... */ },
+  button: { margin: theme.spacing.unit, },
   icon: {
     marginRight: theme.spacing.unit,
     marginLeft: theme.spacing.unit,
@@ -41,7 +42,7 @@ const styles = (theme: Theme) => createStyles({
     paddingRight: 5,
     verticalAlign: 'center',
     display: 'inline-block'
-  }
+  },
 });
 
 export interface IReceiptInputProps extends WithStyles<typeof styles> {
@@ -60,6 +61,7 @@ export interface IReceiptInputProps extends WithStyles<typeof styles> {
   setAmountPence?: (amountPence: string) => void;
 
   setSubmitClicked?: (isSubmitClicked: boolean) => void; 
+  setShouldShowHelper?: (shouldShowHelper: boolean) => void; 
 
   setOfferCode?: (offerCode: string) => void;
 }
@@ -76,6 +78,15 @@ export const ReceiptInput = withStyles(styles)(
     constructor(props : IReceiptInputProps) {
       super(props);
       this.onTextChanged = this.onTextChanged.bind(this);
+      this.onHelp = this.onHelp.bind(this);
+    }
+
+    public onHelp() {
+      if (typeof this.props.setShouldShowHelper === 'function'){
+        this.props.setShouldShowHelper(true);
+      } else {
+        console.error('setShouldShowHelper function not available');
+      }
     }
 
     public onTextChanged(event: any, textid: string) : void {
@@ -89,7 +100,7 @@ export const ReceiptInput = withStyles(styles)(
         switch (textid)
         {
           case this.code1id:
-            this.props.setFirstCode(textValue);
+            this.props.setFirstCode(textValue.toUpperCase());
             if (textValue.length >= 4)
             {
               const element = document.getElementById(this.code2id);
@@ -100,7 +111,7 @@ export const ReceiptInput = withStyles(styles)(
             }
             break;
           case this.code2id:
-            this.props.setSecCode(textValue);
+            this.props.setSecCode(textValue.toUpperCase());
             if (textValue.length >= 4)
             {
               const element = document.getElementById(this.code3id);
@@ -111,7 +122,7 @@ export const ReceiptInput = withStyles(styles)(
             }
             break;
           case this.code3id:
-            this.props.setThirdCode(textValue);
+            this.props.setThirdCode(textValue.toUpperCase());
             if (textValue.length >= 4)
             {
               const element = document.getElementById(this.amountPoundid);
@@ -161,6 +172,8 @@ export const ReceiptInput = withStyles(styles)(
               className={classes.textField}
               inputProps={{ maxLength: 4 }}
               onChange={(e) => this.onTextChanged(e, this.code1id)}
+              required={true}
+              error={firstCode == undefined || firstCode.length != 4}
               />
             <Typography variant="h5" gutterBottom className={classes.inlineTypo}>
               -
@@ -173,6 +186,8 @@ export const ReceiptInput = withStyles(styles)(
               className={classes.textField}
               inputProps={{ maxLength: 4 }}
               onChange={(e) => this.onTextChanged(e, this.code2id)}
+              required={true}
+              error={secCode == undefined || secCode.length != 4}
               />
             <Typography variant="h5" gutterBottom className={classes.inlineTypo}>
               -
@@ -185,6 +200,8 @@ export const ReceiptInput = withStyles(styles)(
               className={classes.textField}
               inputProps={{ maxLength: 4 }}
               onChange={(e) => this.onTextChanged(e, this.code3id)}
+              required={true}
+              error={thirdCode == undefined || thirdCode.length != 4}
               />
           </div>
           <div>
@@ -196,6 +213,8 @@ export const ReceiptInput = withStyles(styles)(
               placeholder="XX"
               className={classes.textFieldSmall}
               onChange={(e) => this.onTextChanged(e, this.amountPoundid)}
+              required={true}
+              error={amountPound == ''}
               />
             <Typography variant="h5" gutterBottom className={classes.inlineTypo}>
               .
@@ -207,7 +226,12 @@ export const ReceiptInput = withStyles(styles)(
               placeholder="XX"
               className={classes.textFieldSmall}
               onChange={(e) => this.onTextChanged(e, this.amountPenceid)}
+              required={true}
+              error={amountPound == ''}
               />
+            <IconButton color="primary" className={classes.button} aria-label="Where can I find these?" onClick={this.onHelp}>
+              <HelpOutlineIcon />
+            </IconButton>
           </div>
           <div>
             <ConfirmPanelContainer />

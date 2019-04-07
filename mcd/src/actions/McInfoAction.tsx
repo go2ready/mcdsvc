@@ -32,3 +32,7 @@ export const setSubmitClicked = createAction('mcinfo/TOGGLE_SUBMIT', resolve => 
 export const setOfferCode = createAction('mcinfo/SET_OFFER_CODE', resolve => {
   return (offerCode: string) => resolve({ offerCode } as IMcInfoState);
 });
+
+export const setShouldShowHelper = createAction('mcinfo/SHOW_HELPER', resolve => {
+  return (shouldShowHelper: boolean) => resolve({ shouldShowHelper } as IMcInfoState);
+});

@@ -35,7 +35,6 @@ class FillingRequestView(APIView):
     result = json.loads(response.read().decode())
 
     if result['success']:
-      print(result)
       offercode = retrieveCode(code1, code2, code3, amountPound, amountPence)
       return JsonResponse({
         'offer_code': offercode

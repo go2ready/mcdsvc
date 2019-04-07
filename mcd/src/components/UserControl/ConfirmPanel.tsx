@@ -70,7 +70,7 @@ export const ConfirmPanel = withStyles(styles)(
       }
     }
 
-    public async onSubmit()
+    public onSubmit()
     {    
       if (typeof this.props.setSubmitClicked === 'function')
       {
@@ -79,11 +79,25 @@ export const ConfirmPanel = withStyles(styles)(
         console.error('setSubmitClicked function not available');
       }
 
+      if (this.props.firstCode == undefined ||
+        this.props.secCode == undefined ||
+        this.props.thirdCode == undefined ||
+        this.props.amountPence == undefined ||
+        this.props.amountPound == undefined ||
+        this.props.firstCode.length != 4 ||
+        this.props.secCode.length != 4 ||
+        this.props.thirdCode .length != 4 ||
+        this.props.amountPence == '' ||
+        this.props.amountPound == '')
+      {
+        return;
+      }
+
       console.log(request);
       request.get('/mcdfill/')
       .set('X-CSRFToken', WebSettingProvider.csrfToken)
       .timeout({
-        response: 20000,  // Wait 20 seconds for the server to start sending,
+        response: 60000,  // Wait 60 seconds for the server to start sending,
       })
       .query({
         code1: this.props.firstCode,
@@ -110,6 +124,22 @@ export const ConfirmPanel = withStyles(styles)(
           } else {
             console.error('setSubmitClicked function not available');
           }
+        }
+      }, err => {
+        if (err.timeout) { 
+          if (typeof this.props.setOfferCode === 'function')
+          {
+            this.props.setOfferCode('Timed out, check your connection or try again later.');
+          } else {
+            console.error('setOfferCode function not available');
+          } 
+        } else {
+          if (typeof this.props.setOfferCode === 'function')
+          {
+            this.props.setOfferCode('Server error, please try again later.');
+          } else {
+            console.error('setOfferCode function not available');
+          }  
         }
       });
     }

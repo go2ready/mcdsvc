@@ -62,7 +62,7 @@ export const ResultPanel = withStyles(styles)(
             unmountOnExit={true}
             timeout={300}
             >
-              <Typography variant="h2" gutterBottom>
+              <Typography variant="h3" gutterBottom>
                 {offerCode}
               </Typography>
             </Fade>

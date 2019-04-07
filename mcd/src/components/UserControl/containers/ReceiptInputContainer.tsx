@@ -10,10 +10,11 @@ import { setOfferCode,
   setThirdCode, 
   setAmountPound,
   setAmountPence,
-  setSubmitClicked} from '../../../actions/McInfoAction';
+  setSubmitClicked,
+  setShouldShowHelper} from '../../../actions/McInfoAction';
 
 export function mapStateToProps(state: RootState) {
-  const { mcinfo: { firstCode, secCode, thirdCode, amountPound, amountPence, isSubmitClicked }} = state;
+  const { mcinfo: { shouldShowHelper, firstCode, secCode, thirdCode, amountPound, amountPence, isSubmitClicked }} = state;
     return {
       firstCode,
       secCode,
@@ -21,6 +22,7 @@ export function mapStateToProps(state: RootState) {
       amountPound,
       amountPence,
       isSubmitClicked,
+      shouldShowHelper,
     }
   }
 
@@ -33,6 +35,7 @@ export function mapDispatchToProps(dispatch: Dispatch<McInfoAction>) {
     setAmountPence: (amountPence : string) => dispatch(setAmountPence(amountPence)),
     setSubmitClicked: (isSubmitClicked: boolean) => dispatch(setSubmitClicked(isSubmitClicked)),
     setOfferCode: (offerCode: string) => dispatch(setOfferCode(offerCode)),
+    setShouldShowHelper: (shouldShowHelper: boolean) => dispatch(setShouldShowHelper(shouldShowHelper)),
   }
 }
 

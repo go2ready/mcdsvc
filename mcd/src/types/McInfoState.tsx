@@ -10,4 +10,6 @@ export interface IMcInfoState {
   readonly isSubmitClicked? : boolean;
 
   readonly offerCode? : string;
+
+  readonly shouldShowHelper?: boolean;
 }

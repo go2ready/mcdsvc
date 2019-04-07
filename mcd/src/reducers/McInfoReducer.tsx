@@ -17,6 +17,7 @@ export function mcInfoActionReducer(state: IMcInfoState | undefined, action: McI
       recaptcha: '',
       isSubmitClicked: false,
       offerCode: '',
+      shouldShowHelper: false,
     }
   }
 
@@ -52,6 +53,10 @@ export function mcInfoActionReducer(state: IMcInfoState | undefined, action: McI
     case getType(mcInfoAction.setRecaptcha):
       return { ...state,
         recaptcha: action.payload.recaptcha,
+      };
+    case getType(mcInfoAction.setShouldShowHelper):
+      return { ...state,
+        shouldShowHelper: action.payload.shouldShowHelper,
       };
     default:
       return state;
