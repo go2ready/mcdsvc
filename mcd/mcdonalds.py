@@ -9,7 +9,7 @@ def retrieveCode(code1, code2, code3, pound, pence):
     POUND=pound
     PENCE=pence
 
-    driver = webdriver.Chrome()
+    driver = webdriver.Chrome(executable_path="/opt/bitnami/apps/django/django_projects/chromedriver")
     #driver = webdriver.Firefox(executable_path=r'/opt/bitnami/apps/django/django_projects/geckodriver', log_path="/opt/bitnami/apps/django/django_projects/geckodriver.log")
     try:
         driver.get('https://www.mcdfoodforthoughts.com/')
