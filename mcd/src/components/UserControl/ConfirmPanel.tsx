@@ -94,7 +94,7 @@ export const ConfirmPanel = withStyles(styles)(
       }
 
       console.log(request);
-      request.get('/mcdfill/')
+      request.get('/mcdsvc/mcdfill/')
       .set('X-CSRFToken', WebSettingProvider.csrfToken)
       .timeout({
         response: 60000,  // Wait 60 seconds for the server to start sending,
