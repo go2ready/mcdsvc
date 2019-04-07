@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from selenium import webdriver
+from pyvirtualdisplay import Display
 
 def retrieveCode(code1, code2, code3, pound, pence):
     CODE1=code1
@@ -8,6 +9,9 @@ def retrieveCode(code1, code2, code3, pound, pence):
     CODE3=code3
     POUND=pound
     PENCE=pence
+
+    display = Display(visible=0, size=(800, 800))  
+    display.start()
 
     driver = webdriver.Chrome(executable_path="/opt/bitnami/apps/django/django_projects/chromedriver")
     #driver = webdriver.Firefox(executable_path=r'/opt/bitnami/apps/django/django_projects/geckodriver', log_path="/opt/bitnami/apps/django/django_projects/geckodriver.log")
