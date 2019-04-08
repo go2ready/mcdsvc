@@ -116,7 +116,7 @@ export const Popups = withStyles(styles)(
               </DialogContentText>
             </DialogContent>
             <DialogActions>
-              <Button onClick={this.handleClose} color="primary">
+              <Button onClick={this.handleExplainerClose} color="primary">
                 Ok
               </Button>
             </DialogActions>
