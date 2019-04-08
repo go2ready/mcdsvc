@@ -133,7 +133,14 @@ export const ReceiptInput = withStyles(styles)(
             }
             break;
           case this.amountPoundid:
-            if (this.isNormalInteger(textValue) || textValue == '')
+            if (textValue.includes('.'))
+            {
+              const element = document.getElementById(this.amountPenceid);
+              if (element != null)
+              {
+                element.focus();
+              }
+            } else if (this.isNormalInteger(textValue) || textValue == '')
             {
               this.props.setAmountPound(textValue);
             }

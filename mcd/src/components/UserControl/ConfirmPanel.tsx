@@ -150,10 +150,10 @@ export const ConfirmPanel = withStyles(styles)(
         isSubmitClicked,
         recaptcha} = this.props;
       
-      let shouldHideButton = true;
+      let shouldHideButton = true || !this.IsDataValid();
       if (recaptcha)
       {
-        shouldHideButton = false;
+        shouldHideButton = false || !this.IsDataValid();
       }
 
       return (
@@ -164,6 +164,15 @@ export const ConfirmPanel = withStyles(styles)(
               onChange={this.onChange}
             />
           </div>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            Website and bots are not free, to keep this website running please consider
+            <input type="hidden" name="cmd" value="_s-xclick" />
+            <input type="hidden" name="hosted_button_id" value="RWJE5978RK72N" />
+            <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+            <img alt="" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+          </form>
+
+
           <div>
             <Fade
             in={!isSubmitClicked}
@@ -184,5 +193,18 @@ export const ConfirmPanel = withStyles(styles)(
       );
     }
 
+    private IsDataValid()
+    {
+      return !(this.props.firstCode == undefined ||
+        this.props.secCode == undefined ||
+        this.props.thirdCode == undefined ||
+        this.props.amountPence == undefined ||
+        this.props.amountPound == undefined ||
+        this.props.firstCode.length != 4 ||
+        this.props.secCode.length != 4 ||
+        this.props.thirdCode .length != 4 ||
+        this.props.amountPence == '' ||
+        this.props.amountPound == '');
+    }
   }
 )

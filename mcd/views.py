@@ -21,7 +21,10 @@ class FillingRequestView(APIView):
     code3 = request.GET.get('code3', '')
     amountPound = request.GET.get('amountPound', '')
     amountPence = request.GET.get('amountPence', '')
-    recaptcha = request.GET.get('recaptcha')
+    recaptcha = request.GET.get('recaptcha', '')
+
+    if len(code1) != 4 or len(code2) != 4 or len(code3) != 4 or amountPound == '' or amountPence == '' or recaptcha == '':
+      return HttpResponse(status=404,)
 
     ''' Begin reCAPTCHA validation '''
     url = 'https://www.google.com/recaptcha/api/siteverify'

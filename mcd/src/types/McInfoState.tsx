@@ -12,4 +12,5 @@ export interface IMcInfoState {
   readonly offerCode? : string;
 
   readonly shouldShowHelper?: boolean;
+  readonly shouldShowExplainer?: boolean;
 }

@@ -58,6 +58,10 @@ export function mcInfoActionReducer(state: IMcInfoState | undefined, action: McI
       return { ...state,
         shouldShowHelper: action.payload.shouldShowHelper,
       };
+    case getType(mcInfoAction.setShouldShowExplainer):
+      return { ...state,
+        shouldShowExplainer: action.payload.shouldShowExplainer
+      };
     default:
       return state;
   }

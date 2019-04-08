@@ -36,3 +36,7 @@ export const setOfferCode = createAction('mcinfo/SET_OFFER_CODE', resolve => {
 export const setShouldShowHelper = createAction('mcinfo/SHOW_HELPER', resolve => {
   return (shouldShowHelper: boolean) => resolve({ shouldShowHelper } as IMcInfoState);
 });
+
+export const setShouldShowExplainer = createAction('mcinfo/SHOW_EXPLAIN', resolve => {
+  return (shouldShowExplainer: boolean) => resolve({ shouldShowExplainer } as IMcInfoState);
+});
