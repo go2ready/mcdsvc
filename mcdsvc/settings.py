@@ -28,7 +28,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6LenmpwUAAAAAO9zw7A56LXeysvy7t0y6OsBwqBG'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mcd.jojotech.co.uk', 'localhost', '127.0.0.1', '40.91.215.227'， 'www.jojotech.co.uk']
+ALLOWED_HOSTS = ['mcd.jojotech.co.uk', 'localhost', '127.0.0.1', '40.91.215.227', 'www.jojotech.co.uk']
 
 # Application definition
 
