@@ -6,10 +6,14 @@ import { withStyles, WithStyles, createStyles  } from '@material-ui/core/styles'
 import Fade from '@material-ui/core/Fade';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 
 const styles = (theme: Theme) => createStyles({
   root: {
-    width: '100%',
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    textAlign: 'center',
   },
   progress: {
     margin: theme.spacing.unit * 2,
@@ -44,29 +48,31 @@ export const ResultPanel = withStyles(styles)(
         unmountOnExit={true}
         timeout={500}
         >
-          <div>
-            <Fade
-            in={offerCode == ''}
-            unmountOnExit={true}
-            timeout={300}
-            >
-              <div>
-                <Typography variant="subtitle1" gutterBottom>
-                  I am filling it out for you, this can take up to 1 minute, please be patient...
+          <Paper className={classes.root} elevation={3}>
+            <div>
+              <Fade
+              in={offerCode == ''}
+              unmountOnExit={true}
+              timeout={300}
+              >
+                <div>
+                  <Typography variant="subtitle1" gutterBottom>
+                    I am filling it out for you, this can take up to 1 minute, please be patient...
+                  </Typography>
+                  <CircularProgress className={classes.progress} color="secondary" />
+                </div>
+              </Fade>
+              <Fade
+              in={offerCode != ''}
+              unmountOnExit={true}
+              timeout={300}
+              >
+                <Typography variant="h3" gutterBottom>
+                  {offerCode}
                 </Typography>
-                <CircularProgress className={classes.progress} color="secondary" />
-              </div>
-            </Fade>
-            <Fade
-            in={offerCode != ''}
-            unmountOnExit={true}
-            timeout={300}
-            >
-              <Typography variant="h3" gutterBottom>
-                {offerCode}
-              </Typography>
-            </Fade>
-          </div>
+              </Fade>
+            </div>
+          </Paper>
         </Fade>
       );
     }

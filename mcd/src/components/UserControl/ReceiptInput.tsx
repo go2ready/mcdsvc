@@ -100,6 +100,10 @@ export const ReceiptInput = withStyles(styles)(
         switch (textid)
         {
           case this.code1id:
+            if (!this.onlyLetters(textValue) && textValue != '')
+            {
+              return;
+            }
             this.props.setFirstCode(textValue.toUpperCase());
             if (textValue.length >= 4)
             {
@@ -111,6 +115,10 @@ export const ReceiptInput = withStyles(styles)(
             }
             break;
           case this.code2id:
+            if (!this.onlyLetters(textValue) && textValue != '')
+            {
+              return;
+            }
             this.props.setSecCode(textValue.toUpperCase());
             if (textValue.length >= 4)
             {
@@ -122,6 +130,10 @@ export const ReceiptInput = withStyles(styles)(
             }
             break;
           case this.code3id:
+            if (!this.onlyLetters(textValue) && textValue != '')
+            {
+              return;
+            }
             this.props.setThirdCode(textValue.toUpperCase());
             if (textValue.length >= 4)
             {
@@ -250,6 +262,10 @@ export const ReceiptInput = withStyles(styles)(
     private isNormalInteger(str: string) {
       var n = Math.floor(Number(str));
       return n !== Infinity && String(n) === str && n >= 0;
+    }
+
+    private onlyLetters(str: string) {
+      return str.match("^[A-z0-9]+$");
     }
   }
 );

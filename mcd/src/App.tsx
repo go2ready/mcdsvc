@@ -62,7 +62,7 @@ export const App = withStyles(styles)(
                   By clicking submit, you will agree the following:
                 </Typography>
                 <Typography variant="subtitle2" gutterBottom color='primary'>
-                  You agree that you are fully satisfied with your visit to Mcdonalds™, which this service will be filling the survery with the assumption as such.
+                  You agree that you are fully satisfied with your visit to Mcdonalds™, which this service will be filling the survey with the assumption as such.
                 </Typography>
                 <Typography variant="body1" gutterBottom>
                   THE SERVICE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SERVICE OR THE USE OR OTHER DEALINGS IN THE SERVICE.
