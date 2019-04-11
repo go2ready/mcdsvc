@@ -49,12 +49,12 @@ export const FootNote = withStyles(styles)(
               <FontAwesomeIcon icon={['fab', 'facebook']} className={classes.icon} />
             </IconButton>
             <IconButton target="_blank"
-            href="https://twitter.com/intent/tweet/?text=Free%20to%20use%2C%20automatic%20survey%20filler%20bot%20for%20%C2%A31.99%20Mcdonald&#x27;s%20big%20mac%20voucher!%20Save%20your%20time%20and%20money%2C%20with%20endless%20voucher!&amp;url=jojotech.co.uk%2Fmcd"
+            href="https://twitter.com/intent/tweet/?text=Automatic%20survey%20filler%20bot%20for%20%C2%A31.99%20Mcdonald&#x27;s%20big%20mac%20voucher!%20jojotech.co.uk%2Fmcd&amp;url=jojotech.co.uk%2Fmcd"
             className={classes.shareIcon} color='primary' aria-label="Delete">
               <FontAwesomeIcon icon={['fab', 'twitter']} className={classes.icon} style={{color: '#55acee'}}/>
             </IconButton>
             <IconButton target="_blank"
-            href="https://reddit.com/submit/?url=jojotech.co.uk%2Fmcd&amp;resubmit=true&amp;title=Free%20to%20use%2C%20automatic%20survey%20filler%20bot%20for%20%C2%A31.99%20Mcdonald&#x27;s%20big%20mac%20voucher!%20Save%20your%20time%20and%20money%2C%20with%20endless%20voucher!"
+            href="https://reddit.com/submit/?url=jojotech.co.uk%2Fmcd&amp;resubmit=true&amp;title=Automatic%20survey%20filler%20bot%20for%20%C2%A31.99%20Mcdonald&#x27;s%20big%20mac%20voucher!%20jojotech.co.uk%2Fmcd"
             className={classes.shareIcon} color='primary' aria-label="Delete">
               <FontAwesomeIcon icon={['fab', 'reddit']} className={classes.icon} style={{color: '#5f99cf'}}/>
             </IconButton>
