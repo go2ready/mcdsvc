@@ -7,7 +7,7 @@ import { withStyles, WithStyles, createStyles  } from '@material-ui/core/styles'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import IconButton from '@material-ui/core/IconButton';
-import cyan from '@material-ui/core/colors/cyan';
+import wotrus from './wotrus.png';
 
 const styles = (theme: Theme) => createStyles({
   root: {
@@ -67,6 +67,9 @@ export const FootNote = withStyles(styles)(
           </Typography>
           <Typography variant="body1" gutterBottom>
             THE SERVICE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SERVICE OR THE USE OR OTHER DEALINGS IN THE SERVICE.
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            <b>Idendity verified by <a href="https://www.wosign.com/english/index.htm"><img src={wotrus} alt="wotrus" /></a> Your data is encrypted to the highest standard.</b>
           </Typography>
         </div>
       );
