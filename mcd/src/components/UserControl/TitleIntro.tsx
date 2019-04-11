@@ -54,7 +54,7 @@ export const TitleIntro = withStyles(styles)(
           <AppBar position="static">
             <Toolbar>
               <Typography variant="h6" color="inherit" className={classes.grow}>
-                Mcdonald auto survey filler
+                Mcdonald's receipt survey automatic filler
               </Typography>
               <Button color="inherit" onClick={this.onExplain}>What is this?</Button>
             </Toolbar>

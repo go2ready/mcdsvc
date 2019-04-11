@@ -89,15 +89,21 @@ export const Popups = withStyles(styles)(
             </DialogTitle>
             <DialogContent>
               <DialogContentText id="alert-dialog-slide-description">
-                This is an automatic bot that will help you fill out mcdonald's £1.99 big mac and fries 
-                survey. Simply enter the code and the money spent, my bots behind the scene will fill
-                out the survey and bring your voucher back to you within a minute.
+                This is an automatic bot that will help you fill out the mcdonald's £1.99 big mac and fries 
+                survey on your receipt. Simply enter the code on your receipt and the money spent,
+                my bots behind the scene will fill out the survey and bring your voucher back to you within a minute.
               </DialogContentText>
               <DialogContentText id="alert-dialog-slide-description">
                 <Typography variant="h6" gutterBottom>
                   What is the catch of using it?
                 </Typography>
                 NOTHING! This service is provided free of charge, to anyone, I also don't save any of your date or cookie.
+              </DialogContentText>
+              <DialogContentText id="alert-dialog-slide-description">
+                <Typography variant="h6" gutterBottom>
+                  Is it really filling the survey? Or just generating random numbers?
+                </Typography>
+                If you don't trust me, try filling the form with random code and amount, you will get error instead of the offer code.
               </DialogContentText>
               <DialogContentText id="alert-dialog-slide-description">
                 <Typography variant="h6" gutterBottom>
