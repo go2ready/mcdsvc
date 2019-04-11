@@ -15,11 +15,14 @@ import { TitleIntroContainer } from './components/UserControl/containers/TitleIn
 import { ReceiptInputContainer } from './components/UserControl/containers/ReceiptInputContainer';
 import { ResultPanelContainer } from './components/UserControl/containers/ResultPanelContainer';
 import { PopupsContainer } from './components/UserControl/containers/PopupsContainer';
+import { FootNote } from './components/UserControl/FootNote'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faPoundSign } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faPoundSign)
+library.add(faPoundSign, fab)
+console.log(library)
 
 const styles = (theme: Theme) => createStyles({
   root: {
@@ -34,6 +37,10 @@ const styles = (theme: Theme) => createStyles({
     paddingBottom: theme.spacing.unit * 2,
     textAlign: 'center',
     maxWidth: '500px',
+  },
+  shareIcon: {
+    textAlign: 'center',
+    display: 'inline',
   },
 });
 
@@ -58,15 +65,7 @@ export const App = withStyles(styles)(
                 <PopupsContainer />
                 <ReceiptInputContainer />
                 <ResultPanelContainer />
-                <Typography variant="h6" gutterBottom color='secondary'>
-                  By clicking submit, you will agree the following:
-                </Typography>
-                <Typography variant="subtitle2" gutterBottom color='primary'>
-                  You agree that you are fully satisfied with your visit to Mcdonalds™, which this service will be filling the survey with the assumption as such.
-                </Typography>
-                <Typography variant="body1" gutterBottom>
-                  THE SERVICE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SERVICE OR THE USE OR OTHER DEALINGS IN THE SERVICE.
-                </Typography>
+                <FootNote />
               </Paper> 
             </div>
           }

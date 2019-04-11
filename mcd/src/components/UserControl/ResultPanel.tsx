@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 
 const styles = (theme: Theme) => createStyles({
-  root: {
+  rootclass: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
@@ -42,13 +42,15 @@ export const ResultPanel = withStyles(styles)(
         shouldShow = isSubmitClicked;
       }
 
+      var botNumber = Math.random() * 100;
+
       return (
         <Fade
         in={shouldShow}
         unmountOnExit={true}
         timeout={500}
         >
-          <Paper className={classes.root} elevation={3}>
+          <Paper className={classes.rootclass} elevation={3}>
             <div>
               <Fade
               in={offerCode == ''}
@@ -57,7 +59,7 @@ export const ResultPanel = withStyles(styles)(
               >
                 <div>
                   <Typography variant="subtitle1" gutterBottom>
-                    I am filling it out for you, this can take up to 1 minute, please be patient...
+                    Bot#{botNumber}: Hello my friend, I am filling it out for you, this can take up to 1 minute, please be patient^^
                   </Typography>
                   <CircularProgress className={classes.progress} color="secondary" />
                 </div>
