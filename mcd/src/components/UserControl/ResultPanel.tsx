@@ -27,6 +27,8 @@ export interface IResultPanelProps extends WithStyles<typeof styles> {
 
 export const ResultPanel = withStyles(styles)(
   class extends React.Component<IResultPanelProps> {
+    private botNumber: number = Math.floor(Math.random() * 100);
+
     constructor(props : IResultPanelProps) {
       super(props);
     }
@@ -41,8 +43,6 @@ export const ResultPanel = withStyles(styles)(
       {
         shouldShow = isSubmitClicked;
       }
-
-      var botNumber = Math.random() * 100;
 
       return (
         <Fade
@@ -59,7 +59,7 @@ export const ResultPanel = withStyles(styles)(
               >
                 <div>
                   <Typography variant="subtitle1" gutterBottom>
-                    Bot#{botNumber}: Hello my friend, I am filling it out for you, this can take up to 1 minute, please be patient^^
+                    Bot<b>#{this.botNumber}</b>: Hello my friend, I am filling it out for you, this can take up to 1 minute, please be patient^^
                   </Typography>
                   <CircularProgress className={classes.progress} color="secondary" />
                 </div>
