@@ -97,7 +97,7 @@ export const Popups = withStyles(styles)(
                 <Typography variant="h6" gutterBottom>
                   What is the catch of using it?
                 </Typography>
-                NOTHING! This service is provided free of charge, to anyone, I also don't save any of your date or cookie.
+                NOTHING! This service is provided free of charge, to anyone.
               </DialogContentText>
               <DialogContentText id="alert-dialog-slide-description">
                 <Typography variant="h6" gutterBottom>
