@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'mcdsvc.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
+EXAMPLE_DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'djangostack',
@@ -97,7 +97,7 @@ DATABASES = {
     }
 }
 
-EXAMPLE_DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
